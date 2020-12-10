@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo 01</title>
+    <Script>
+        function limpiar()
+        {
+            document.getElementById('prom').value='';
+            document.getElementById('cal').value='';
+        }
+        function calificacion()
+        {
+            var nota=parseFloat(document.getElementById('prom').value);
+
+            if (nota>=17)
+            {
+                cal='A';
+            }else if (14<=nota && nota<17){
+                cal='B';
+            }else if (12<= nota && nota<14){
+                cal='C';
+            }else if (nota<12){
+                cal='D';
+            }
+            document.Ejercicio1.cal.value=cal;
+        }
+        
+    </Script>
+</head>
+<body>
+    <h1>Ejercicio 01</h1>
+    <form name="Ejercicio1">
+        <table border="1">
+            <tr>
+                <td>Promedio: </td>
+                <td><input type="text" name="prom" id="prom"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" name=" btn1" id="btn1" value="Asignar calificación" onclick="calificacion()"></td>
+            </tr>
+            <tr>
+                <td>Calificación: </td>
+                <td><input type="text" name="cal" id="cal"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" name="btn2" id="btn2" value='Limpiar' onclick="limpiar()"></td>
+            </tr>
+
+        </table>
+    </form>
+    
+</body>
+</html>

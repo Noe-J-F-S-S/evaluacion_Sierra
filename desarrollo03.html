@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo 03</title>
+    <script>
+        function calcular()
+        {
+            let importe = document.getElementById('ivm').value;
+            let hijos=document.getElementById('hijos').value;
+            let comision,bonificacion,sueldobruto,descuento,sueldoneto;
+            bonificacion = 50 * hijos;
+            comision = importe * 0.075;
+            sueldobruto = 600 + bonificacion + comision;
+            sueldoneto = sueldobruto - (sueldobruto * 0.11);
+            descuento = sueldobruto - sueldoneto;
+            document.Ejercicio3.bonificacion.value=bonificacion;
+            document.Ejercicio3.comision.value=comision;
+            document.Ejercicio3.sueldobruto.value=sueldobruto;
+            document.Ejercicio3.sueldoneto.value=sueldoneto;
+            document.Ejercicio3.descuento.value=Math.round(descuento)
+
+
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Ejercicio 03</h1>
+    <form name="Ejercicio3">
+        <table border="1">
+            <tr>
+                <td>Importe vendido del mes: </td>
+                <td><input type="text" name="ivm" id="ivm"></td>
+
+            </tr>
+            <tr>
+                <td>Cantidad de hijos en etapa escolar: </td>
+                <td><input type="text" name="hijos" id="hijos"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" name="btn1" id="btn2" value="Calcular" onclick="calcular()">  </td>
+            </tr>
+            <tr>
+                <td>Comisión: </td>
+                <td><input type="text" name="comision" id="comision"></td>
+            </tr>
+            <tr>
+                <td>Bonificación: </td>
+                <td><input type="text" name="bonificacion" id="bonificacion"></td>
+            </tr>
+            <tr>
+                <td>Sueldo Bruto: </td>
+                <td><input type="text" name="sueldobruto" id="sueldobruto"></td>
+            </tr>
+            <tr>
+                <td>Importe del descuento: </td>
+                <td><input type="text" name="descuento" id="descuento"></td>
+            </tr>
+            <tr>
+                <td>Sueldo Neto: </td>
+                <td><input type="text" name="sueldoneto" id="sueldoneto"></td>
+            </tr>
+
+
+
+        </table>
+    </form>
+    
+</body>
+</html>

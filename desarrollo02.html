@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo 02</title>
+    <script>
+        function profesores()
+        {
+        var canthijos = document.getElementById('CantidadHijos').value;
+        if (canthijos <= 3 ){
+            canthijos = canthijos*25;
+        }else if( 3 < canthijos){
+            canthijos = 75 + 10 * (canthijos-3);
+        }
+
+        document.ejercicio2.BonificacionHijos.value = canthijos;
+
+        var bonificacionLaboral = parseFloat(document.getElementById('profesor').value);
+        var categoria = parseFloat(document.getElementById('categoria').value);
+        var bonificacion = categoria -(categoria - ( categoria * bonificacionLaboral)); 
+        var Bonificaciontotal =  categoria + bonificacion + canthijos; 
+
+        document.ejercicio2.BonificacionLaboral.value = bonificacion;
+        
+        document.ejercicio2.Bonificaciontotal.value = Bonificaciontotal;
+        }
+    </script>
+</head>
+<body>
+    <h1>Ejercicio 02</h1>
+    <form name="ejercicio2">
+        <table border="1">
+            <tr>
+                <td>Cantidad de hijos: </td>
+                <td><input type="text" name="CantidadHijos" id="CantidadHijos"></td>
+            </tr>
+            <tr>
+                <td>Condicion laboral: </td>
+                <td colspan="2">
+                    <select name="" id="profesor">
+                        <option value="">--Elija una opcion--</option>
+                        <option value="0.15">Profesor Nombrado</option>
+                        <option value="0.10">Profesor Contratado</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Categoría: </td>
+                <td colspan="2">
+                    <select name="" id="categoria">
+                        <option value="">--Elija una categoría</option>
+                        <option value="2350">A</option>
+                        <option value="2000">B</option>
+                        <option value="1850">C</option>
+                        <option value="1500">C</option>
+
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" name="" id="boton" value="Resultados" onclick="profesores()"></td>
+            </tr>
+            <tr>
+                <td>Bonificacion por numero de hijos: </td>
+                <td><input type="text" name="" id="BonificacionHijos" readonly='true'></td>
+            </tr>
+            <tr>
+                <td>Bonificacion Laboral: </td>
+                <td><input type="text" name="" id="BonificacionLaboral" readonly='true'></td>
+            </tr>
+            <tr>
+                <td>Bonificacion total: </td>
+                <td><input type="text" name="" id="Bonificaciontotal" readonly='true'></td>
+            </tr>
+        </table>
+
+    </form>
+    
+</body>
+</html>  
